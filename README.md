@@ -1,5 +1,5 @@
 # Github-Backup-Docker-Util
-A Docker utility to backup your Github account anywhere using rclone
+Backup your entire GitHub account to a remote location using Docker
 
 ## Utilities used
 - [rclone](https://rclone.org/)
