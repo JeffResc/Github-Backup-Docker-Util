@@ -1,4 +1,6 @@
 # Github-Backup-Docker-Util
+![Docker Cloud Build Status](https://img.shields.io/docker/cloud/build/jeffresc/github-backup?style=for-the-badge) ![GitHub last commit](https://img.shields.io/github/last-commit/JeffResc/Github-Backup-Docker-Util?style=for-the-badge)
+
 Backup your entire GitHub account to a remote location using Docker
 
 ## Utilities used
