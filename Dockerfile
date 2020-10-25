@@ -1,5 +1,5 @@
 FROM alpine:3.12.0
-MAINTAINER jeff@jeffresc.dev
+LABEL maintainer="jeff@jeffresc.dev"
 
 ENV PYTHONUNBUFFERED=1
 RUN apk add --update --no-cache python3 rclone git coreutils zip && ln -sf python3 /usr/bin/python
