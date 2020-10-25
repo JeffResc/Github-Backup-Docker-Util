@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # Create variables
-nowDate=$(date +'%F')
+NOW_DATE=$(date +'%F')
 
 # Download backup
 github-backup --token $GITHUB_TOKEN --output-directory /tmp/gh-bk $BACKUP_FLAGS $GITHUB_USERNAME
@@ -10,16 +10,16 @@ github-backup --token $GITHUB_TOKEN --output-directory /tmp/gh-bk $BACKUP_FLAGS 
 if [ "$ZIP" == 1 ] ; then
     cd /tmp
     zip -r $ZIP_OPTIONS "gh-bk/"
-    mv /tmp/1.zip /tmp/gh-bk-${nowDate}.zip
+    mv /tmp/1.zip /tmp/gh-bk-${NOW_DATE}.zip
 fi
 
 # Upload backup
 if [ "$ZIP" == 1 ] ; then
-    echo "Moving /tmp/gh-bk-${nowDate}.zip to ${RCLONE_PATH}gh-bk-${nowDate}.zip"
-    rclone move -v "/tmp/gh-bk-${nowDate}.zip" ${RCLONE_PATH}
+    echo "Moving /tmp/gh-bk-${NOW_DATE}.zip to ${RCLONE_PATH}gh-bk-${NOW_DATE}.zip"
+    rclone move -v "/tmp/gh-bk-${NOW_DATE}.zip" ${RCLONE_PATH}
 else
-    echo "Moving /tmp/gh-bk to ${RCLONE_PATH}gh-bk-${nowDate}"
-    rclone moveto -v "/tmp/gh-bk" ${RCLONE_PATH}gh-bk-${nowDate}
+    echo "Moving /tmp/gh-bk to ${RCLONE_PATH}gh-bk-${NOW_DATE}"
+    rclone moveto -v "/tmp/gh-bk" ${RCLONE_PATH}gh-bk-${NOW_DATE}
 fi
 
 # Delete old
