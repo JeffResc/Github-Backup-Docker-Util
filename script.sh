@@ -25,11 +25,12 @@ fi
 # Delete old
 if [ "$DAYS_TO_KEEP" != 0 ] ; then
     if [ "$ZIP" == 1 ] ; then
-        echo "Deleting ${RCLONE_PATH}gh-bk-${oldDate}.zip"
-        rclone deletefile ${RCLONE_PATH}gh-bk-${oldDate}.zip
+        OLD_DATE=$(date --date="${DAYS_TO_KEEP} days ago" +'%F')
+        echo "Deleting ${RCLONE_PATH}gh-bk-${OLD_DATE}.zip"
+        rclone deletefile ${RCLONE_PATH}gh-bk-${OLD_DATE}.zip
     else
-        echo "Deleting ${RCLONE_PATH}gh-bk-${oldDate}"
-        rclone delete ${RCLONE_PATH}gh-bk-${oldDate}
+        echo "Deleting ${RCLONE_PATH}gh-bk-${OLD_DATE}"
+        rclone delete ${RCLONE_PATH}gh-bk-${OLD_DATE}
     fi
 fi
 
