@@ -1,4 +1,4 @@
-FROM alpine:3.12.0
+FROM alpine:3.12.1
 LABEL maintainer="jeff@jeffresc.dev"
 
 ENV PYTHONUNBUFFERED=1
